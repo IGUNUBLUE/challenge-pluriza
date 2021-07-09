@@ -1,2 +1,2 @@
-# challenge-pluriza
-Challenge to pluriza companie
+# pluriza-challenge
+Challenge from pluriza

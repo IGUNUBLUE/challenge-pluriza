@@ -1,12 +1,10 @@
+// import routes from '../routes';
 
-import './App.css';
+import Search from '../components/search';
+import '../styles/App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hola</h1>
-    </div>
-  );
+   return <div className="App">{<Search />}</div>;
 }
 
 export default App;

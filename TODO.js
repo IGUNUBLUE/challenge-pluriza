@@ -8,4 +8,5 @@
    - hacer los test
    - documentation 
    - loading animation
+   - readme
 */

@@ -23,7 +23,8 @@ body {
    justify-content: center;
    align-items: center;
    margin: 45px 0px 0px 0px;
-   width: 1060px;
+   width: 100vw;
+   max-width: 1069px;
 }
 
 .search {
@@ -33,18 +34,19 @@ body {
 }
 
 .search-with-result {
-   margin-left: 54px;
+   margin-left: 62px;
    display: flex;
    justify-content: flex-start;
    align-items: center;
-   width: 100%;
+   width: 100vw;
+   max-width: 1069px;
 }
 
 .detail-results {
    height: 20px;
    font-size: 18px;
    color: #8d8d8d;
-   margin: 10px 0px 0px 54px;
+   margin: 10px 0px 0px 62px;
    width: 100%;
 }
 

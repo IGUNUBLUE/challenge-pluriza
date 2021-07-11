@@ -2,23 +2,44 @@ import { useSelector } from 'react-redux';
 
 import UserCard from './userCard';
 import RepositorioCard from './repositorioCard';
+import Search from '../search';
+
+import loadingAnimation from '../../assets/loading.gif';
+import '../../styles/results/results.scss';
 
 const Results = () => {
    const result = useSelector((state) => state.response?.result);
+   let stateResults = null;
 
    if (result) {
-      if (result.type === 'users') {
-         return result.github_results.items.map((item, i) => (
+      const {
+         type,
+         github_results: { total_count, items },
+      } = result;
+
+      if (type === 'users' && total_count !== 0) {
+         stateResults = items.map((item, i) => (
             <UserCard key={i} data={item} />
          ));
-      } else {
-         return result.github_results.items.map((item, i) => (
+      } else if (type === 'users' && total_count !== 0) {
+         stateResults = items.map((item, i) => (
             <RepositorioCard key={i} data={item} />
          ));
+      } else {
+         stateResults = <h1>No results found</h1>;
       }
    } else {
-      return <div></div>;
+      stateResults = <img src={loadingAnimation} alt="loading-animation" />;
    }
+
+   return (
+      <div className="results-container">
+         <div className="search-results-container">
+            <Search />
+         </div>
+         <div className="cards-results-container">{stateResults}</div>
+      </div>
+   );
 };
 
 export default Results;

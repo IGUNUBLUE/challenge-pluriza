@@ -8,51 +8,11 @@ body {
    justify-content: center;
 }
 
-.App_without_results {
+.App {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   // width: 100vw;
+   max-width: 1031px;
    height: 100vh;
-}
-
-.App_with_results {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   margin: 45px 0px 0px 0px;
-   width: 100vw;
-   max-width: 1069px;
-}
-
-.search {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-}
-
-.search-with-result {
-   margin-left: 62px;
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   width: 100vw;
-   max-width: 1069px;
-}
-
-.detail-results {
-   height: 20px;
-   font-size: 18px;
-   color: #8d8d8d;
-   margin: 10px 0px 0px 62px;
-   width: 100%;
-}
-
-.results {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
 }

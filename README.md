@@ -22,20 +22,19 @@ Challenge from pluriza
 
 -  En la API se implementaron todos los requerimientos, excepto typeScript. TypeScript era el siguiente paso ya que quería concentrarme en los requerimientos, funcionalidades y después hacer la migración. Todo esto porque mi nivel de typescript esta progresando.
 
--  En el front la gran mayoría de los requerimientos fueron abordados. Hay mejoras por hacer en varios frentes. Ademas Redux-persist no lo pude implementar porque se me agoto el tiempo y lo requería debido a que no había utilizado el modulo anteriormente.
+-  En el front la gran mayoría de los requerimientos fueron abordados. Hay mejoras por hacer en varios frentes.
 
 ## TODO
 
--  migrar a typescript.
--  implementar swagger para documentar la API.
--  redux-persist.
--  ajustes a responsive.
--  requerimiento de la resolution (<=768).
--  hacer los test.
--  documentation.
--  loading animation.
--  readme. (mejorar)
--  paginado. (frontend)
+-  Migrar a typescript.
+-  Redux-persist. ✅
+-  Ajustes a responsive.
+-  Requerimiento de la resolution (<=768).
+-  Hacer los test.
+-  Documentación.
+-  Loading animation.
+-  Readme. (mejorar) ✅
+-  Paginado. (frontend)
 
 #### Bitácora:
 
@@ -46,3 +45,4 @@ Challenge from pluriza
 -  Redis es un ferrari!! request de 8 - 10 ms head-boom...
 -  Que bueno me las estoy pasando... jajajaja...
 -  WTF!! HEROKU me mi TC para poder poner el Addons de redis T-T, no queda de otra... toma mi TC...
+-  Domingo 1:28 pm, Acabo de implementar el redux-persist!! , seguimos... faltan cosas por ajuntar en el front.

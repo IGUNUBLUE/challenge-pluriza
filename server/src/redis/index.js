@@ -1,9 +1,10 @@
 const redis = require('redis');
 const redisPort = process.env.REDIS_PORT || 6379;
-const client = redis.createClient(redisPort);
+const redisHost = process.env.REDIS_URL || "'127.0.0.1'";
+const client = redis.createClient(redisPort, redisHost);
 
 client.on('error', (err) => {
-  console.log(err);
+   console.log(err);
 });
 
 module.exports = client;

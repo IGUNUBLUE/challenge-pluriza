@@ -29,7 +29,7 @@ Challenge from pluriza
 -  Migrar a typescript.
 -  Redux-persist. ✅
 -  Ajustes a responsive.
--  Requerimiento de la resolution (<=768).
+-  Requerimiento de la resolution (<=768). ✅
 -  Hacer los test.
 -  Documentación.
 -  Loading animation.

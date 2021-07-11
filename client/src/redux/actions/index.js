@@ -1,24 +1,29 @@
 import axios from 'axios';
 
-import { GET_RESULTS, CLEAR_CACHE } from './types';
+import { GET_RESULTS, CLEAR_CACHE, CLEAN_STATE } from './types';
 
-export const getResults = (searchCriteria) => {
+const API_URL = process.env.REACT_APP_BACK_URL || 'http://localhost:3001';
+
+export const getResults = ({ text, type }) => {
    return async (dispatch) => {
-      const resp = await axios.post(
-         `${process.env.REACT_APP_BACK_URL}/search`,
-         searchCriteria
-      );
-      const json = await resp.json();
-      dispatch({ type: GET_RESULTS, payload: json });
+      const { data } = await axios.post(`${API_URL}/search`, {
+         typeOfSearch: type,
+         textToSearch: text,
+      });
+      dispatch({ type: GET_RESULTS, payload: data });
    };
 };
 
 export const clearCache = () => {
    return async (dispatch) => {
-      const resp = await axios.get(
-         `${process.env.REACT_APP_BACK_URL}/clear-cache`
-      );
+      const resp = await axios.get(`${API_URL}/clear-cache`);
       const json = await resp.json();
       dispatch({ type: CLEAR_CACHE, payload: json });
+   };
+};
+
+export const cleanState = () => {
+   return async (dispatch) => {
+      dispatch({ type: CLEAN_STATE, payload: undefined });
    };
 };

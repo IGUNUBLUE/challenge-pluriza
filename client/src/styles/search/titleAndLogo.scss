@@ -1,0 +1,25 @@
+.logoAndText-container {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-bottom: 20px;
+}
+
+.logo-container {
+   width: 50px;
+}
+
+.search-title {
+   color: #222222;
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.search-description {
+   font-size: 18px;
+   color: #8d8d8d;
+}
+
+.titleAndDescription-container {
+   margin-left: 15px;
+}

@@ -1,8 +1,8 @@
-import { CLEAR_CACHE, GET_RESULTS } from '../actions/types';
+import { CLEAN_STATE, CLEAR_CACHE, GET_RESULTS } from '../actions/types';
 
 const initialState = {
-   response: {},
-   messages: {}
+   response: undefined,
+   messages: undefined,
 };
 
 function reducer(state = initialState, action) {
@@ -12,11 +12,17 @@ function reducer(state = initialState, action) {
             ...state,
             response: action.payload,
          };
-      
+
       case CLEAR_CACHE:
          return {
             ...state,
             messages: action.payload,
+         };
+
+      case CLEAN_STATE:
+         return {
+            ...state,
+            response: action.payload,
          };
 
       default:

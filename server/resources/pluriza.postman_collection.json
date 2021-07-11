@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "2d9a736e-d3d9-435e-aae1-47e1235e3fe8",
+		"name": "pluriza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/search - users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typeOfSearch\":\"users\",\n    \"textToSearch\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gh-searcher20.herokuapp.com/search",
+					"protocol": "https",
+					"host": [
+						"gh-searcher20",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"search"
+					]
+				},
+				"description": "This request is for testing the POST / search endpoint. As a response it returns all the results that match the search criteria. Example:\n```json\n{\n    \"message\": \"Data from external API\",\n    \"result\": {\n        \"type\": \"users\",\n        \"text\": \"12345\",\n        \"github_results\": {\n            \"total_count\": 9871,\n            \"incomplete_results\": false,\n            \"items\": [\n                {\n                    \"login\": \"12345\",\n                    \"id\": 18281050,\n                    \"node_id\": \"MDQ6VXNlcjE4MjgxMDUw\",\n                    \"avatar_url\": \"https://avatars.githubusercontent.com/u/18281050?v=4\",\n                    \"gravatar_id\": \"\",\n                    \"url\": \"https://api.github.com/users/12345\",\n                    \"html_url\": \"https://github.com/12345\",\n                    \"followers_url\": \"https://api.github.com/users/12345/followers\",\n                    \"following_url\": \"https://api.github.com/users/12345/following{/other_user}\",\n                    \"gists_url\": \"https://api.github.com/users/12345/gists{/gist_id}\",\n                    \"starred_url\": \"https://api.github.com/users/12345/starred{/owner}{/repo}\",\n                    \"subscriptions_url\": \"https://api.github.com/users/12345/subscriptions\",\n                    \"organizations_url\": \"https://api.github.com/users/12345/orgs\",\n                    \"repos_url\": \"https://api.github.com/users/12345/repos\",\n                    \"events_url\": \"https://api.github.com/users/12345/events{/privacy}\",\n                    \"received_events_url\": \"https://api.github.com/users/12345/received_events\",\n                    \"type\": \"User\",\n                    \"site_admin\": false,\n                    \"score\": 1\n                },\n         }\n    }\n}\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "/search - repositories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typeOfSearch\":\"repositories\",\n    \"textToSearch\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gh-searcher20.herokuapp.com/search",
+					"protocol": "https",
+					"host": [
+						"gh-searcher20",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"search"
+					]
+				},
+				"description": "This request is for testing the POST / search endpoint. As a response it returns all the results that match the search criteria. Example:\n```json\n{\n    \"message\": \"Data from external API\",\n    \"result\": {\n        \"type\": \"repositories\",\n        \"text\": \"12345\",\n        \"github_results\": {\n            \"total_count\": 13579,\n            \"incomplete_results\": false,\n            \"items\": [\n                {\n                    \"id\": 31457290,\n                    \"node_id\": \"MDEwOlJlcG9zaXRvcnkzMTQ1NzI5MA==\",\n                    \"name\": \"Vimrc1234567\",\n                    \"full_name\": \"Anthony1234567/Vimrc1234567\",\n                    \"private\": false,\n                    \"owner\": {\n                        \"login\": \"Anthony1234567\",\n                        \"id\": 6342285,\n                        \"node_id\": \"MDQ6VXNlcjYzNDIyODU=\",\n                        \"avatar_url\": \"https://avatars.githubusercontent.com/u/6342285?v=4\",\n                        \"gravatar_id\": \"\",\n                        \"url\": \"https://api.github.com/users/Anthony1234567\",\n                        \"html_url\": \"https://github.com/Anthony1234567\",\n                        \"followers_url\": \"https://api.github.com/users/Anthony1234567/followers\",\n                        \"following_url\": \"https://api.github.com/users/Anthony1234567/following{/other_user}\",\n                        \"gists_url\": \"https://api.github.com/users/Anthony1234567/gists{/gist_id}\",\n                        \"starred_url\": \"https://api.github.com/users/Anthony1234567/starred{/owner}{/repo}\",\n                        \"subscriptions_url\": \"https://api.github.com/users/Anthony1234567/subscriptions\",\n                        \"organizations_url\": \"https://api.github.com/users/Anthony1234567/orgs\",\n                        \"repos_url\": \"https://api.github.com/users/Anthony1234567/repos\",\n                        \"events_url\": \"https://api.github.com/users/Anthony1234567/events{/privacy}\",\n                        \"received_events_url\": \"https://api.github.com/users/Anthony1234567/received_events\",\n                        \"type\": \"User\",\n                        \"site_admin\": false\n                    },\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "/clear-cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gh-searcher20.herokuapp.com/clear-cache",
+					"protocol": "https",
+					"host": [
+						"gh-searcher20",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"clear-cache"
+					]
+				},
+				"description": "This endpoind deletes the existing keys in redis."
+			},
+			"response": []
+		}
+	]
+}

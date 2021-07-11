@@ -1,8 +1,14 @@
-import { CLEAN_STATE, CLEAR_CACHE, GET_RESULTS } from '../actions/types';
+import {
+   CLEAN_STATE,
+   CLEAR_CACHE,
+   GET_RESULTS,
+   SET_SEARCH_CRITERIA,
+} from '../actions/types';
 
 const initialState = {
    response: undefined,
    messages: undefined,
+   searchCriteria: { text: '', type: 'users' },
 };
 
 function reducer(state = initialState, action) {
@@ -23,6 +29,12 @@ function reducer(state = initialState, action) {
          return {
             ...state,
             response: action.payload,
+         };
+
+      case SET_SEARCH_CRITERIA:
+         return {
+            ...state,
+            searchCriteria: action.payload,
          };
 
       default:

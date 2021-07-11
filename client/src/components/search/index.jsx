@@ -1,31 +1,33 @@
-import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import { getResults, cleanState } from '../../redux/actions';
+import { getResults, cleanState, setSearchCriteria } from '../../redux/actions';
 
 import TitleAndLogo from './titleAndLogo';
 import '../../styles/search/search.scss';
 
 const Search = () => {
    const dispatch = useDispatch();
-   const [inputs, setInputs] = useState({ text: '', type: 'users' });
+   const searchCriteria = useSelector((state) => state.searchCriteria);
 
    const handleInputChange = (event) => {
       let value = event.target.value;
       let name = event.target.name;
-      setInputs({
-         ...inputs,
-         [name]: value,
-      });
+      dispatch(
+         setSearchCriteria({
+            ...searchCriteria,
+            [name]: value,
+         })
+      );
    };
 
    useEffect(() => {
-      if (inputs.text.length >= 3 ) {
-         dispatch(getResults(inputs));
+      if (searchCriteria.text.length >= 3) {
+         dispatch(getResults(searchCriteria));
       } else {
-         dispatch(cleanState())
+         dispatch(cleanState());
       }
-   },[dispatch, inputs]);
+   }, [dispatch, searchCriteria]);
 
    return (
       <div className="search-container">
@@ -37,7 +39,7 @@ const Search = () => {
             className="input-criteria"
             autoFocus
             onChange={(e) => handleInputChange(e)}
-            defaultValue={inputs.text}
+            defaultValue={searchCriteria.text}
          />
          <select
             name="type"

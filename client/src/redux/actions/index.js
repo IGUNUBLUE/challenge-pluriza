@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { GET_RESULTS, CLEAR_CACHE, CLEAN_STATE } from './types';
+import {
+   GET_RESULTS,
+   CLEAR_CACHE,
+   CLEAN_STATE,
+   SET_SEARCH_CRITERIA,
+} from './types';
 
 const API_URL = process.env.REACT_APP_BACK_URL || 'http://localhost:3001';
 
@@ -25,5 +30,11 @@ export const clearCache = () => {
 export const cleanState = () => {
    return async (dispatch) => {
       dispatch({ type: CLEAN_STATE, payload: undefined });
+   };
+};
+
+export const setSearchCriteria = (value) => {
+   return async (dispatch) => {
+      dispatch({ type: SET_SEARCH_CRITERIA, payload: value });
    };
 };

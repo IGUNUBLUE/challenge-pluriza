@@ -11,7 +11,13 @@ function App() {
 
    return (
       <BrowserRouter>
-         <div className={result ? 'App_with_results' : 'App_without_results'}>
+         <div
+            className={
+               result?.github_results.total_count > 0
+                  ? 'App_with_results'
+                  : 'App_without_results'
+            }
+         >
             <div className={result ? 'search-with-result' : 'search'}>
                <Route exact path="/" component={Search} />
             </div>

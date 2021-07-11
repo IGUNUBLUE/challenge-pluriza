@@ -12,7 +12,9 @@ const Results = () => {
             <UserCard key={i} data={item} />
          ));
       } else {
-         return <RepositorioCard />;
+         return result.github_results.items.map((item, i) => (
+            <RepositorioCard key={i} data={item} />
+         ));
       }
    } else {
       return <div></div>;

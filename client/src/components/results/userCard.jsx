@@ -1,22 +1,22 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 
 import '../../styles/results/userCard.scss';
 
 const UserCard = ({ data }) => {
-   const [followers, setfollowers] = useState(0);
-   const [following, setfollowing] = useState(0);
+   // const [followers, setfollowers] = useState(0);
+   // const [following, setfollowing] = useState(0);
 
-   useEffect(() => {
-      async function getFoll(){
-         let followers = await axios.get(`${decodeURI(data.followers_url)}`);
-         let following = await axios.get(`${decodeURI(data.following_url)}`);
-         setfollowers(followers.data.length);
-         setfollowing(following.data.length);
-         console.log(followers);
-      }
-      getFoll();
-   }, [data.followers_url, data.following_url]);
+   // useEffect(() => {
+   //    async function getFoll(){
+   //       let followers = await axios.get(`${decodeURI(data.followers_url)}`);
+   //       let following = await axios.get(`${decodeURI(data.following_url)}`);
+   //       setfollowers(followers.data.length);
+   //       setfollowing(following.data.length);
+   //       console.log(followers);
+   //    }
+   //    getFoll();
+   // }, [data.followers_url, data.following_url]);
 
    return (
       <div className="card">
@@ -35,8 +35,8 @@ const UserCard = ({ data }) => {
                🔗: <a href="data.html_url">{data.html_url}</a>
             </div>
             <div>
-               <span name="followers">⬅️:{ followers }</span>
-               <span name="following">➡️:{ following }</span>
+               <span name="followers">⬅️:{ {/*followers*/} }</span>
+               <span name="following">➡️:{ {/*following*/} }</span>
             </div>
          </div>
       </div>

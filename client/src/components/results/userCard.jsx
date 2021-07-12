@@ -1,13 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 import '../../styles/results/userCard.scss';
 
 const UserCard = ({ data }) => {
-   const [followers, setfollowers] = useState();
-   const [following, setfollowing] = useState();
+   const [followers, setfollowers] = useState(0);
+   const [following, setfollowing] = useState(0);
 
    useEffect(() => {
       async function getFoll(){
@@ -15,9 +13,10 @@ const UserCard = ({ data }) => {
          let following = await axios.get(`${decodeURI(data.following_url)}`);
          setfollowers(followers.data.length);
          setfollowing(following.data.length);
+         console.log(followers);
       }
       getFoll();
-   }, []);
+   }, [data.followers_url, data.following_url]);
 
    return (
       <div className="card">

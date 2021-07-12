@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import TypesMenu from './typesMenu';
 import { getResults, cleanState, setSearchCriteria } from '../../redux/actions';
 
 import TitleAndLogo from './titleAndLogo';
@@ -15,6 +16,7 @@ const Search = () => {
    const handleInputChange = (event) => {
       let value = event.target.value;
       let name = event.target.name;
+
       dispatch(
          setSearchCriteria({
             ...searchCriteria,
@@ -45,14 +47,10 @@ const Search = () => {
             onChange={(e) => handleInputChange(e)}
             defaultValue={searchCriteria.text}
          />
-         <select
-            name="type"
-            className="select-types"
-            onChange={(e) => handleInputChange(e)}
-         >
-            <option value="users">Users</option>
-            <option value="repositories">Repositories</option>
-         </select>
+         <TypesMenu
+            type={searchCriteria.type}
+            handleInputChange={handleInputChange}
+         />
       </div>
    );
 };

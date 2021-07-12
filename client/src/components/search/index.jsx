@@ -2,16 +2,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import TypesMenu from './typesMenu';
 import { getResults, cleanState, setSearchCriteria } from '../../redux/actions';
 
 import TitleAndLogo from './titleAndLogo';
 import '../../styles/search/search.scss';
+import TypesMenu from './typesMenu';
 
 const Search = () => {
    const dispatch = useDispatch();
-   const searchCriteria = useSelector((state) => state.searchCriteria);
    const history = useHistory();
+   const searchCriteria = useSelector((state) => state.searchCriteria);
 
    const handleInputChange = (event) => {
       let value = event.target.value;

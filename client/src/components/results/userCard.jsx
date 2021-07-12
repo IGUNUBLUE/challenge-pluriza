@@ -32,7 +32,7 @@ const UserCard = ({ data }) => {
             <div name="ID">🆔: {data.id}</div>
             <div name="location">📍: Unknown</div>
             <div name="link_profile">
-               🔗: <a href="data.html_url">{data.html_url}</a>
+               🔗: <a href={data.html_url}>{data.html_url}</a>
             </div>
             <div>
                <span name="followers">⬅️:0</span> -- 

@@ -35,8 +35,8 @@ const UserCard = ({ data }) => {
                🔗: <a href="data.html_url">{data.html_url}</a>
             </div>
             <div>
-               <span name="followers">⬅️:{ {/*followers*/} }</span>
-               <span name="following">➡️:{ {/*following*/} }</span>
+               <span name="followers">⬅️:0</span> -- 
+               <span name="following">➡️:0</span>
             </div>
          </div>
       </div>

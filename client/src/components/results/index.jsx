@@ -21,7 +21,7 @@ const Results = () => {
          stateResults = items.map((item, i) => (
             <UserCard key={i} data={item} />
          ));
-      } else if (type === 'users' && total_count !== 0) {
+      } else if (type === 'repositories' && total_count !== 0) {
          stateResults = items.map((item, i) => (
             <RepositorioCard key={i} data={item} />
          ));
